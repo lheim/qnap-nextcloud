@@ -1,0 +1,27 @@
+version: '2'
+
+volumes:
+  nextcloud:
+  db:
+
+services:
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - db:/var/lib/postgresql/data
+    environment:
+     - POSTGRES_USER=nextcloud
+     - POSTGRES_PASSWORD=SUPERSECRETPASSWORD
+     - POSTGRES_DB=nextcloud
+
+
+  app:  
+    image: nextcloud
+    ports:
+      - 8088:80
+    links:
+      - db
+    volumes:
+      - nextcloud:/var/www/html
+    restart: always
