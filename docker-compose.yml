@@ -16,10 +16,10 @@ services:
      - POSTGRES_DB=nextcloud
 
 
-  app:  
+  app:
     image: nextcloud
     ports:
-      - 8088:80
+      - 445:443
     links:
       - db
     volumes:
