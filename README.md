@@ -7,7 +7,7 @@
 ### steps
 1.  login to the webinterface of your NAS and open the container station application to create a new application:
 
-![Container Station](container-station.png)
+![Container Station](screenshots/container-station.png)
 
 2. copy and past the content of the docker-compose.yml.
 3. make sure to set the postgres password in the docker-compose.yml: `POSTGRES_PASSWORD=SUPERSECRETPASSWORD`. if necessary change the port to which the nextcloud container gets exposed to. in this example it is **445** as the default port **443** it occupied by the NAS webinterface.
@@ -16,7 +16,7 @@
 
 4. to access the nextcloud instance via SSL we need to create a self signed certificate. access the shell of the nextcloud container.
 
-![Shell Access](terminal-access.png)
+![Shell Access](screenshots/terminal-access.png)
 
 activate ssl in apache
 ```
